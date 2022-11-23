@@ -27,3 +27,9 @@
 .actions{
 
 }
+.btn{
+    background-color: black;
+    color: white;
+    font-size: medium;
+    margin-left: 40%;
+}
