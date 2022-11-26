@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import MeetupList from "../components/meetups/MeetupList";
 
+import "../index.css";
+
 
 function AllMeetupsPage(){
     const [isLoading, setIsLoading] = useState(true);
@@ -33,8 +35,7 @@ function AllMeetupsPage(){
 
     if(isLoading){
         return(
-            <section>
-                <h1>Loading ....</h1>
+            <section className="loader">
             </section>
         )
     }
