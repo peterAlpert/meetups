@@ -1,7 +1,17 @@
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
+import { useState } from "react";
 
 function MeetupItem(props) {
+  const [itemIsFavorite,setItemIsFavorite] = useState(false)
+
+  function toggle(){
+    if(!itemIsFavorite)
+      setItemIsFavorite(true);
+    else
+      setItemIsFavorite(false);
+
+  }
   return (
     <li className={classes.item}>
       <Card>
@@ -14,7 +24,7 @@ function MeetupItem(props) {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          <button >To Favorites</button>
+          <button onClick={toggle}>{ itemIsFavorite ? 'Remove From Favorites' : 'Add To Favorites'}</button>
         </div>
       </Card>
     </li>
